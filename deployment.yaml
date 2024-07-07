@@ -27,12 +27,12 @@ spec:
           volumeMounts:
             - name: mosquitto-conf
               mountPath: /mosquitto/config
-            - name: mosquitto-base-config
-              mountPath: /tmp/mosquitto.conf
-              subPath: mosquitto.conf
-            - name: mosquitto-base-config
-              mountPath: /tmp/password_file
-              subPath: password_file
+            # - name: mosquitto-base-config
+            #   mountPath: /tmp/mosquitto.conf
+            #   subPath: mosquitto.conf
+            # - name: mosquitto-base-config
+            #   mountPath: /tmp/password_file
+            #   subPath: password_file
       containers:
         - name: mosquitto
           image: "eclipse-mosquitto:2.0.18"
@@ -74,7 +74,7 @@ spec:
         - name: mosquitto-conf
           persistentVolumeClaim:
             claimName: mosquitto-conf
-        - name: mosquitto-base-config
-          configMap:
-            name: mosquitto-base-config
-            optional: true
+        # - name: mosquitto-base-config
+        #   configMap:
+        #     name: mosquitto-base-config
+        #     optional: true
