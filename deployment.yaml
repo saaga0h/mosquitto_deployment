@@ -77,3 +77,4 @@ spec:
         - name: mosquitto-base-config
           configMap:
             name: mosquitto-base-config
+            optional: true
